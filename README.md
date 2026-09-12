@@ -48,4 +48,4 @@ History retains 1,800 samples. Missing readings are not a health guarantee, and 
 
 ## Contributing and license
 
-See [CONTRIBUTING.md](CONTRIBUTING.md). No open-source license has been selected for Pulse's own code yet. Public visibility alone does not grant permission to reuse it. Choose and add a LICENSE before advertising this as open source. Third-party components retain their own licenses.
+See [CONTRIBUTING.md](CONTRIBUTING.md). Pulse PC is licensed under the [MIT License](LICENSE). Third-party components retain their own licenses; see [THIRD-PARTY.md](THIRD-PARTY.md).
