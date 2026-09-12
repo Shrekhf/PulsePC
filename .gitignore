@@ -1,0 +1,13 @@
+bin/
+test-results/
+Sensors/
+Data/
+settings.ini
+*.exe
+*.dll
+*.pdb
+*.log
+*.csv
+*.error.txt
+.vs/
+.idea/
