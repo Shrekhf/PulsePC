@@ -7,7 +7,7 @@ $OutputDirectory = [IO.Path]::GetFullPath($OutputDirectory)
 $sources = @(Get-ChildItem -LiteralPath $PSScriptRoot -Filter '*.cs' | Sort-Object Name | ForEach-Object FullName)
 & $compiler /nologo /optimize+ /platform:x64 /target:winexe "/out:$OutputDirectory\Pulse.exe" "/win32icon:$PSScriptRoot\Pulse.ico" "/win32manifest:$PSScriptRoot\Pulse.manifest" /reference:System.Windows.Forms.dll /reference:System.Drawing.dll /reference:System.Management.dll /reference:System.Web.Extensions.dll $sources
 if ($LASTEXITCODE -ne 0) { throw 'Build failed.' }
-foreach ($name in @('Pulse.ico','README.md','LICENSE','THIRD-PARTY.md','Install.ps1','Install Pulse.cmd')) {
+foreach ($name in @('Pulse.ico','README.md','LICENSE','THIRD-PARTY.md','Install.ps1','Install Pulse.cmd','START-HERE.txt','Setup-Sensors.ps1','Set up sensors.cmd')) {
     Copy-Item -LiteralPath (Join-Path $PSScriptRoot $name) -Destination $OutputDirectory -Force
 }
 if (Test-Path -LiteralPath "$PSScriptRoot\Sensors") {

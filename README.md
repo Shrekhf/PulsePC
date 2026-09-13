@@ -2,6 +2,12 @@
 
 A Windows desktop dashboard for hardware, temperatures, drive health, performance history, and process management.
 
+## Download and install
+
+Get `PulsePC-1.4.0-windows-x64.zip` from [Releases](https://github.com/Shrekhf/PulsePC/releases/latest), extract the entire ZIP, and run `Pulse.exe`. No compiling is needed. Run `Install Pulse.cmd` for a per-user Start menu installation.
+
+Sensor libraries are included in the ready-to-run ZIP. For low-level CPU/motherboard readings, run `Set up sensors.cmd` once to download the verified official PawnIO installer, then restart Pulse as administrator. This step needs internet access and Windows approval. Hardware without a supported sensor still shows unavailable values. See `START-HERE.txt` in the ZIP.
+
 ## Build and run
 
 Windows 10/11 x64 with .NET Framework 4.8 is the supported target. No NuGet packages or separate SDK are needed for the basic build.
@@ -41,6 +47,8 @@ Keep portable installations in a writable folder. Each copy has separate data; r
 The smoke test launches a separate instance, captures seven views, and exercises telemetry, alerts, preferences, history export, sorting, process protections, and drive-health logic. Results go to ignored `test-results/`. Driver installation, process termination, power-plan changes and Windows notification delivery require separate manual verification. The included Windows CI workflow runs the same test.
 
 ## Performance and limitations
+
+Maintainers can run `.\package.ps1` to create a clean release ZIP and checksum file in `dist/`. The script downloads the pinned sensor release and includes its license notices. Run from a source checkout without a local `Sensors/` folder.
 
 Sampling runs off the UI thread with no overlapping reads. Missing external WMI providers retry once per minute; reflection metadata is cached for sensor polling. Builds enable compiler optimization. Slow hardware providers can still delay samples.
 

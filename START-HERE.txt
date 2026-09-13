@@ -1,0 +1,24 @@
+PULSE PC 1.4 - WINDOWS X64
+
+1. Extract the entire ZIP to a writable folder. Do not run it inside the ZIP.
+2. Double-click Pulse.exe to run. No compiler or SDK is needed.
+3. Optional: run Install Pulse.cmd for a Start menu shortcut and per-user installation.
+
+CPU / MOTHERBOARD TEMPERATURES
+The sensor libraries are included. On a PC without PawnIO, run Set up sensors.cmd
+once while connected to the internet. It downloads and verifies the official driver
+installer. Review its options and approve the Windows administrator prompt.
+Then restart Pulse as administrator through Thermals > Sensor status.
+The same setup action is available in that menu.
+
+A dash means no reading was reported. Administrator access cannot create sensors
+your hardware does not expose; RAM temperature is not supported by every module.
+Basic CPU/RAM usage and disk capacity do not need this driver.
+
+Requirements: Windows 10/11 x64 and .NET Framework 4.8.
+Pulse is unsigned. The optional driver has its own upstream signature.
+Settings and history are saved next to Pulse.exe. Do not share your Data folder.
+Updates preserve existing installed settings and history.
+
+Source and license: https://github.com/Shrekhf/PulsePC
+Third-party licenses and source links: THIRD-PARTY.md and Sensors notices.

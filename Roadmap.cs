@@ -566,16 +566,16 @@ partial class Dashboard
 
     void SensorSetup()
     {
-        var menu = CreateSensorSetupMenu(RestartAdmin, InstallSensorDriver, () => MessageBox.Show(this, data.SensorStatus + "\n\nOptional setup: place LibreHardwareMonitor 0.9.6 libraries in Sensors. Install PawnIO from its official release, then restart Pulse as administrator for low-level readings. See THIRD-PARTY.md. Basic monitoring works without these components.", "Pulse hardware sensors", MessageBoxButtons.OK, MessageBoxIcon.Information));
+        var menu = CreateSensorSetupMenu(RestartAdmin, InstallSensorDriver, () => MessageBox.Show(this, data.SensorStatus + "\n\nThe ready-to-run release includes the sensor libraries. Use Install / repair PawnIO sensor driver once, then restart Pulse as administrator for low-level readings. Setup requires internet access and Windows approval. Unsupported sensors remain unavailable. See START-HERE.txt.", "Pulse hardware sensors", MessageBoxButtons.OK, MessageBoxIcon.Information));
         menu.Show(sensorSetup, new Point(0, sensorSetup.Height));
     }
 
     void InstallSensorDriver()
     {
-        string installer = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Sensors", "PawnIO_setup.exe");
+        string installer = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Set up sensors.cmd");
         try
         {
-            Process.Start(new ProcessStartInfo(installer) { UseShellExecute = true, Verb = "runas" });
+            Process.Start(new ProcessStartInfo(installer) { UseShellExecute = true });
             notice = "Finish the PawnIO installer, then restart Pulse as administrator.";
         }
         catch (Exception ex)

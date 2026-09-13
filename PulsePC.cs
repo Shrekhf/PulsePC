@@ -847,7 +847,7 @@ partial class Dashboard : Form
         T("MONITOR", 25, 130, 8, muted, 170, true);
         T("LOCAL / PRIVATE", 25, 581, 8, mint, 170, true);
         T(data.Uptime.Days + "d " + data.Uptime.Hours + "h " + data.Uptime.Minutes + "m uptime", 25, 604, 10, muted, 170);
-        T("PULSE  1.3", 25, 765, 8, muted, 170, true);
+        T("PULSE  1.4", 25, 765, 8, muted, 170, true);
         string title = pageTitles[page];
         T(title, 244, 37, 27, white, 790, true);
         T(pageDescriptions[page], 246, 91, 11, muted, 820);
