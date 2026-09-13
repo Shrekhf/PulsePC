@@ -796,6 +796,10 @@ partial class Dashboard
             throw new Exception("Process sort failed");
         appSort = 1;
         UpdateList();
+        // PerformClick requires a visible, selectable control. Navigate explicitly
+        // instead of relying on the previous screenshot's Settings layout.
+        page = 6;
+        LayoutControls();
         topToggle.Checked = true;
         if (!TopMost)
             throw new Exception("Always-on-top failed");
