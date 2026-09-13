@@ -212,6 +212,7 @@ partial class Dashboard
 
     void LayoutExperience()
     {
+        LayoutFanSpeed();
         if (sensorSearch == null)
             return;
         foreach (Control c in Controls)

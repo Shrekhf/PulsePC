@@ -4,7 +4,7 @@ A Windows desktop dashboard for hardware, temperatures, drive health, performanc
 
 ## Download and install
 
-Get `PulsePC-1.4.0-windows-x64.zip` from [Releases](https://github.com/Shrekhf/PulsePC/releases/latest), extract the entire ZIP, and run `Pulse.exe`. No compiling is needed. Run `Install Pulse.cmd` for a per-user Start menu installation.
+Get `PulsePC-1.4.1-windows-x64.zip` from [Releases](https://github.com/Shrekhf/PulsePC/releases/latest), extract the entire ZIP, and run `Pulse.exe`. No compiling is needed. Run `Install Pulse.cmd` for a per-user Start menu installation.
 
 Sensor libraries are included in the ready-to-run ZIP. For low-level CPU/motherboard readings, run `Set up sensors.cmd` once to download the verified official PawnIO installer, then restart Pulse as administrator. This step needs internet access and Windows approval. Hardware without a supported sensor still shows unavailable values. See `START-HERE.txt` in the ZIP.
 
@@ -57,3 +57,7 @@ History retains 1,800 samples. Missing readings are not a health guarantee, and 
 ## Contributing and license
 
 See [CONTRIBUTING.md](CONTRIBUTING.md). Pulse PC is licensed under the [MIT License](LICENSE). Third-party components retain their own licenses; see [THIRD-PARTY.md](THIRD-PARTY.md).
+
+## Fan speed
+New layouts include a Fan speed (RPM) card. Existing layouts can select it through Customize. Choose fan selects a reported sensor by its identity. Zero RPM is retained; a missing selected sensor stays unavailable. GPU fan (%) is a separate card and is never converted to RPM. Readings require supported hardware and sensor access; this feature does not change fan speeds.
+

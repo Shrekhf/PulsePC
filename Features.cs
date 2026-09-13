@@ -886,6 +886,7 @@ partial class Dashboard
             VerifyTaskMenu();
             VerifyGroupActions();
             VerifyDriveHealth();
+            VerifyFanSpeed();
             pause.PerformClick();
             if (!paused)
                 throw new Exception("Pause test failed");

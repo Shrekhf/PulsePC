@@ -15,17 +15,20 @@ partial class Dashboard
         "GPU utilization",
         "VRAM in use",
         "Download speed",
-        "Disk space free"
+        "Disk space free",
+        "Fan speed (RPM)",
+        "GPU fan (%)"
     };
     int[] cards =
     {
         0,
         1,
         2,
-        3
+        8
     };
     void InitPersonalization()
     {
+        InitFanSpeed();
         try
         {
             string icon = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Pulse.ico");
@@ -145,6 +148,12 @@ partial class Dashboard
                 case 7:
                     double total = data.Volumes.Sum(v => v.Total), free = data.Volumes.Sum(v => v.Free);
                     Metric(x, "DISK SPACE FREE", free.ToString("0") + " GB", "Across fixed volumes", total > 0 ? 100 * free / total : double.NaN, mint);
+                    break;
+                case 8:
+                    DrawFanCard(x);
+                    break;
+                case 9:
+                    Metric(x, "GPU FAN", double.IsNaN(data.Fan) ? "—" : data.Fan.ToString("0") + "%", "Reported GPU fan percentage", data.Fan, blue);
                     break;
             }
         }

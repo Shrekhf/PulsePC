@@ -18,7 +18,7 @@ New-Item -ItemType Directory -Path $sensors | Out-Null
 Get-ChildItem -LiteralPath $upstream -Filter '*.dll' | Copy-Item -Destination $sensors
 Invoke-WebRequest 'https://raw.githubusercontent.com/LibreHardwareMonitor/LibreHardwareMonitor/v0.9.6/LICENSE' -OutFile (Join-Path $sensors 'LICENSE.txt') -UseBasicParsing
 Invoke-WebRequest 'https://raw.githubusercontent.com/LibreHardwareMonitor/LibreHardwareMonitor/v0.9.6/THIRD-PARTY-NOTICES.txt' -OutFile (Join-Path $sensors 'THIRD-PARTY-NOTICES.txt') -UseBasicParsing
-$zip = Join-Path ([IO.Path]::GetFullPath($OutputDirectory)) 'PulsePC-1.4.0-windows-x64.zip'
+$zip = Join-Path ([IO.Path]::GetFullPath($OutputDirectory)) 'PulsePC-1.4.1-windows-x64.zip'
 if (Test-Path -LiteralPath $zip) { throw 'Output already exists. Choose a new output directory.' }
 Compress-Archive -LiteralPath $app -DestinationPath $zip -CompressionLevel Optimal
 $checksum = (Get-FileHash -LiteralPath $zip -Algorithm SHA256).Hash.ToLowerInvariant() + '  ' + [IO.Path]::GetFileName($zip)
